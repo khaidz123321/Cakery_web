@@ -1,0 +1,597 @@
+/********** Template CSS **********/
+:root {
+    --primary: #EAA636;
+    --secondary: #545454;
+    --light: #FDF5EB;
+    --dark: #1E1916;
+}
+
+h4,
+h5,
+h6,
+.h4,
+.h5,
+.h6 {
+    font-weight: 600 !important;
+}
+
+.py-6 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+.my-6 {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 30px;
+    bottom: 30px;
+    z-index: 99;
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button ***/
+.btn {
+    font-weight: 500;
+    transition: .5s;
+}
+
+.btn.btn-primary {
+    color: #FFFFFF;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+
+/*** Navbar ***/
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.navbar .navbar-nav .nav-link {
+    padding: 35px 15px;
+    color: var(--light);
+    outline: none;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+.navbar.fixed-top {
+    transition: .5s;
+}
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav {
+        margin-top: 10px;
+        border-top: 1px solid rgba(255, 255, 255, .3);
+        background: var(--dark);
+    }
+
+    .navbar .navbar-nav .nav-link {
+        padding: 10px 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        visibility: hidden;
+        top: 100%;
+        transform: rotateX(-75deg);
+        transform-origin: 0% 0%;
+        transition: .5s;
+        opacity: 0;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        transform: rotateX(0deg);
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+
+
+/*** Header ***/
+.header-carousel .owl-carousel-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, .5);
+}
+
+@media (max-width: 768px) {
+    .header-carousel .owl-carousel-item {
+        position: relative;
+        min-height: 600px;
+    }
+
+    .header-carousel .owl-carousel-item img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .header-carousel .owl-carousel-item p {
+        font-size: 16px !important;
+    }
+}
+
+.header-carousel .owl-nav {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: -40px auto 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-carousel .owl-nav::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #FFFFFF;
+    transform: rotate(45deg);
+}
+
+.header-carousel .owl-nav .owl-prev,
+.header-carousel .owl-nav .owl-next {
+    position: relative;
+    font-size: 40px;
+    color: var(--primary);
+    transition: .5s;
+    z-index: 1;
+}
+
+.header-carousel .owl-nav .owl-prev:hover,
+.header-carousel .owl-nav .owl-next:hover {
+    color: var(--dark);
+}
+
+.page-header {
+    margin-bottom: 6rem;
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../img/carousel-1.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    color: var(--light);
+}
+
+
+/*** Facts ***/
+.fact-item {
+    transition: .5s;
+}
+
+.fact-item:hover {
+    margin-top: -10px;
+    background: #FFFFFF !important;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .07);
+}
+
+
+/*** About ***/
+.img-twice::before {
+    position: absolute;
+    content: "";
+    width: 60%;
+    height: 80%;
+    top: 10%;
+    left: 20%;
+    background: var(--primary);
+    border: 25px solid var(--light);
+    border-radius: 6px;
+    z-index: -1;
+}
+
+
+/*** Product ***/
+.product-item {
+    transition: .5s;
+}
+
+.product-item:hover {
+    background: var(--primary) !important;
+}
+
+.product-item:hover * {
+    color: var(--light);
+}
+
+.product-item:hover .border-primary {
+    border-color: var(--light) !important;
+}
+
+.product-item .product-overlay {
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, .5);
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+
+.product-item:hover .product-overlay {
+    height: 100%;
+    opacity: 1;
+}
+
+
+/*** Team ***/
+.team-item .team-text {
+    position: relative;
+    height: 100px;
+    overflow: hidden;
+}
+
+.team-item .team-title {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--light);
+    transition: .5s;
+}
+
+.team-item:hover .team-title {
+    top: -100px;
+}
+
+.team-item .team-social {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 100px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    transition: .5s;
+}
+
+.team-item .team-social .btn {
+    margin: 0 3px;
+}
+
+.team-item:hover .team-social {
+    top: 0;
+}
+
+
+/*** Testimonial ***/
+.testimonial-carousel .owl-item .testimonial-item img {
+    width: 60px;
+    height: 60px;
+}
+
+.testimonial-carousel .owl-item .testimonial-item,
+.testimonial-carousel .owl-item .testimonial-item * {
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-item {
+    background: var(--primary) !important;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-item * {
+    color: #FFFFFF !important;
+}
+
+.testimonial-carousel .owl-nav {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.testimonial-carousel .owl-nav .owl-prev,
+.testimonial-carousel .owl-nav .owl-next {
+    margin: 0 12px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    font-size: 22px;
+    color: var(--light);
+    background: var(--primary);
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-nav .owl-prev:hover,
+.testimonial-carousel .owl-nav .owl-next:hover {
+    color: var(--primary);
+    background: var(--dark);
+}
+
+
+/*** Footer ***/
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: var(--light);
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: var(--light);
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    color: var(--primary);
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.copyright {
+    background: #111111;
+}
+
+.copyright a {
+    color: var(--primary);
+}
+
+.copyright a:hover {
+    color: var(--light);
+}
+
+/* Ép tất cả ảnh sản phẩm về cùng 1 kích thước */
+.product-item img.img-fluid {
+    width: 100%;
+    height: 500px; 
+    object-fit: cover;
+}
+
+/* Ép màu chữ thanh Menu thành xám đậm và in đậm hơn trên nền trắng */
+.navbar-light .navbar-nav .nav-link {
+    color: #333333 !important; /* Đổi thành màu xám đậm (gần đen) để cực kỳ rõ nét */
+    font-weight: 600 !important; /* Tăng độ dày chữ lên cho cứng cáp, dễ nhìn */
+    font-size: 16px !important; /* Chỉnh size chữ to lên một chút xíu nếu cần */
+}
+
+/* Căn giữa ô nhập số lượng và ẩn mũi tên mặc định */
+.input-group input[type="number"] {
+    text-align: center;
+    padding: 0;
+}
+.input-group input[type=number]::-webkit-inner-spin-button, 
+.input-group input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+/* Giữ màu vàng chủ đạo (primary) khi rê chuột vào hoặc đang ở trang đó */
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--primary) !important; 
+}
+
+/* start */
+/* CSS cho bộ nút social_plugin - Đã tối ưu cho Tiệm bánh Cakery */
+.social-contact-icons {
+    position: fixed;
+    bottom: 40px; 
+    right: 30px; 
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 12px;
+}
+
+.social-contact-icons .icon {
+    width: 55px; /* Tăng nhẹ kích thước để dễ bấm hơn trên điện thoại */
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 26px; 
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15); 
+    transition: all 0.3s ease;
+    animation: shake 3s infinite; 
+    overflow: hidden;
+}
+
+/* Màu sắc chuẩn cho từng nền tảng */
+.icon.zalo { background: #0084FF; }
+.icon.maps { background: #EA4335; }
+.icon.message { background: #FF9800; } 
+
+/* Xử lý riêng cho logo Zalo để không bị lệch */
+.icon.zalo img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+/* Hiệu ứng rung lắc (Shake) tự nhiên hơn */
+@keyframes shake {
+    0% { transform: scale(1); }
+    10% { transform: scale(1.1) rotate(5deg); }
+    20% { transform: scale(1.1) rotate(-5deg); }
+    30% { transform: scale(1.1) rotate(5deg); }
+    40% { transform: scale(1) rotate(0); }
+    100% { transform: scale(1) rotate(0); }
+}
+
+/* Hiệu ứng khi di chuột vào */
+.social-contact-icons .icon:hover {
+    transform: scale(1.2) translateY(-5px); /* Phóng to và bay lên nhẹ */
+    animation: none;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.back-to-top {
+    right: 100px !important;
+    bottom: 40px !important;
+}
+
+/* Chỉ sửa hiển thị cho nút Zalo */
+.social-contact-icons .icon.zalo {
+    background: #0084FF !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.social-contact-icons .icon.zalo svg {
+    width: 60% !important; 
+    height: 60% !important;
+}
+
+.social-contact-icons .icon.zalo img {
+    display: none !important;
+}
+/* end */
+
+/* Custom thanh cuộn cho Mini Cart */
+#cart-items::-webkit-scrollbar {
+    width: 6px;
+}
+#cart-items::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+/* start giỏ hàng */
+/* Nút xóa sản phẩm chữ X */
+.remove-item-btn {
+    background: #f1f1f1;
+    border: none;
+    color: #999;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.remove-item-btn:hover {
+    background: #ff4d4d;
+    color: white;
+}
+@media (min-width: 992px) {
+    .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        right: 0 !important; /* Ép canh lề phải */
+        left: auto !important; /* Hủy canh lề trái mặc định */
+        top: 100%; /* Đảm bảo luôn nằm dưới icon */
+    }
+}
+/* end giỏ hàng */
+
+/* Khung viền thanh mảnh chỉ dành riêng cho phần Dịch vụ */
+.service-frame::before {
+    background: transparent !important; 
+    border: 3px solid var(--primary) !important; 
+    border-radius: 10px;
+}
+
+/* Style cho 3 icon tròn lớn lơ lửng ở phần Dịch vụ */
+.decor-icon-circle {
+    width: 80px;
+    height: 80px;
+    background-color: var(--primary); /* Nền vàng */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #ffffff; /* Viền trắng */
+    transition: all 0.3s ease;
+}
+
+.decor-icon-circle i {
+    font-size: 32px;
+    color: #5c3d3a; /* Icon màu nâu */
+}
+
+.decor-icon-circle:hover {
+    transform: scale(1.1);
+    background-color: #5c3d3a;
+}
+.decor-icon-circle:hover i {
+    color: var(--primary);
+}
